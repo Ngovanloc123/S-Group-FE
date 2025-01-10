@@ -1,0 +1,109 @@
+* {
+    margin: 0; /* Xóa margin mặc định của tất cả phần tử */
+    padding: 0; /* Xóa padding mặc định của tất cả phần tử */
+    box-sizing: border-box; /* Thiết lập box-sizing thành border-box để tính toán chiều rộng và chiều cao của phần tử bao gồm cả padding và border */
+    font-family: sans-serif; /* Thiết lập font chữ mặc định là sans-serif cho tất cả các phần tử */
+}
+
+.hero {
+    width: 100%; /* Đặt chiều rộng của phần tử hero là 100% so với phần tử cha */
+    min-height: 100vh; /* Đảm bảo chiều cao tối thiểu của hero bằng 100% chiều cao của viewport */
+    background-image: url(./img/back-image.png); /* Đặt hình nền cho hero */
+    background-position: center; /* Đặt vị trí của hình nền vào giữa */
+    background-size: cover; /* Đảm bảo hình nền phủ toàn bộ phần tử hero */
+    padding: 10px 10%; /* Thêm khoảng đệm vào phần trên, dưới, trái và phải của phần tử hero */
+    overflow: hidden; /* Ẩn phần content của phần tử hero nếu nó tràn ra ngoài */
+    position: relative; /* Đặt vị trí của phần tử hero là relative để các phần tử con sử dụng position: absolute được đặt tương đối */
+}
+
+nav {
+    padding: 10px 0; /* Thêm padding trên và dưới của nav */
+    display: flex; /* Dùng Flexbox để bố trí các phần tử con trong nav */
+    align-items: center; /* Căn giữa các phần tử theo trục dọc */
+    justify-content: space-between; /* Căn các phần tử con ra hai bên của nav */
+}
+
+.logo {
+    width: 140px; /* Đặt chiều rộng của logo là 140px */
+}
+
+nav ul li {
+    display: inline-block; /* Đặt các phần tử li trong nav ở dạng inline-block để chúng hiển thị liền nhau */
+    list-style: none; /* Xóa dấu chấm (bullet) của các phần tử li */
+    margin: 10px 15px; /* Thêm margin trái và phải cho các phần tử li */
+}
+
+nav ul li a {
+    text-decoration: none; /* Xóa gạch chân của các liên kết */
+    color: #333; /* Đặt màu chữ của liên kết là màu xám đậm */
+    font-weight: 400; /* Đặt trọng lượng font của liên kết là bình thường */
+}
+
+.login-btn {
+    text-decoration: none; /* Xóa gạch chân của liên kết */
+    color: #333; /* Đặt màu chữ của liên kết là màu xám đậm */
+    margin-right: 15px; /* Thêm khoảng cách bên phải cho login-btn */
+    font-weight: 400; /* Đặt trọng lượng font của login-btn là bình thường */
+}
+
+.btn {
+    display: inline-block; /* Hiển thị các nút dưới dạng inline-block */
+    text-decoration: none; /* Xóa gạch chân của các liên kết */
+    padding: 14px 40px; /* Thêm padding vào nút để làm cho nó lớn hơn */
+    color: #fff; /* Đặt màu chữ của nút là màu trắng */
+    background-image: linear-gradient(45deg, #df4881, #c430d7); /* Đặt màu nền của nút với gradient */
+    font-size: 14px; /* Đặt kích thước chữ của nút */
+    border-radius: 30px; /* Đặt bo tròn cho các góc của nút */
+    border-top-right-radius: 0; /* Đặt góc trên bên phải của nút không có bo tròn */
+    transition: 0.5s; /* Thêm hiệu ứng chuyển tiếp khi thay đổi thuộc tính (ví dụ: hover) */
+}
+
+.content {
+    margin-top: 10%; /* Thêm khoảng cách trên cho phần nội dung */
+    max-width: 600px; /* Đặt chiều rộng tối đa cho phần nội dung */
+}
+
+.content h1 {
+    font-size: 70px; /* Đặt kích thước chữ cho h1 là 70px */
+    color: #222; /* Đặt màu chữ cho h1 là màu xám đậm */
+}
+
+.content p {
+    margin: 10px 0 30px; /* Thêm margin cho phần tử p (10px trên, 0 dưới, 30px dưới) */
+    color: #333; /* Đặt màu chữ cho p là màu xám */
+    animation-delay: 0.5s; /* Đặt độ trễ của animation */
+}
+
+.content .btn {
+    padding: 15px 80px; /* Thêm padding cho nút bên trong phần content */
+    font-size: 16px; /* Đặt kích thước chữ của nút trong content */
+    animation-delay: 0.5s; /* Đặt độ trễ của animation cho nút */
+}
+
+.btn:hover {
+    border-top-right-radius: 30px; /* Thêm hiệu ứng bo tròn góc trên bên phải khi hover */
+}
+
+.feature-img {
+    width: 530px; /* Đặt chiều rộng cho hình ảnh */
+    position: absolute; /* Đặt hình ảnh với position absolute để nó không chiếm không gian trong layout */
+    bottom: 0; /* Đặt hình ảnh nằm ở dưới cùng của phần tử cha */
+    right: 10%; /* Đặt hình ảnh cách phải của phần tử cha 10% */
+}
+
+.feature-img.anim {
+    animation-delay: 1.5s; /* Đặt độ trễ cho animation của feature-img */
+}
+
+.anim {
+    opacity: 0; /* Đặt độ mờ của phần tử ban đầu là 0 */
+    transform: translateY(30px); /* Đặt phần tử bắt đầu dịch chuyển từ 30px phía dưới */
+    animation: moveup 0.5s linear forwards; /* Áp dụng animation moveup */
+}
+
+@keyframes moveup {
+    100%{
+        opacity: 1; /* Đặt độ mờ của phần tử là 1 (hiện lên) */
+        transform: translateY(0); /* Đặt phần tử về vị trí ban đầu (không dịch chuyển) */
+    }
+}
